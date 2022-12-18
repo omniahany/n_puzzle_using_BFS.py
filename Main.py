@@ -1,4 +1,5 @@
 from Search_Algorithms import Best_First_search
+goal = [1, 2, 3, 4, 5, 6, 7, 8, 0]
 
 #initial state
 n = int(input("Enter n\n"))
@@ -9,6 +10,10 @@ for i in range(0,n*n):
     root.append(p)
 
 print("The given state is:", root)
+counter = 0;
+for i in range(n*n):
+        if (root[i] != goal[i]):
+            counter += 1
 
 
 #count the number of inversions       
@@ -35,9 +40,10 @@ if solvable(root):
     time4 = time()
     Best_First_search_solution =  Best_First_search(root, n)
     Best_First_search_time = time() - time4
-    print('A* Solution is ', Best_First_search_solution[0])
+    print('best first search  Solution is ', Best_First_search_solution[0])
     print('Number of explored nodes is ', Best_First_search_solution[1])
-    print('A* Time:', Best_First_search_time)
+    print('best first search Time:', Best_First_search_time)
+    print('number of misplaced tiles  ', counter)
     
     
 else:
