@@ -98,12 +98,13 @@ class State:
     #gets the given state and returns it's direction + it's parent's direction till there is no parent
     def solution(self):
         solution = []
-        solution.append(self.direction)
+        solution.append(self.state)
         path = self
         while path.parent != None:
             path = path.parent
-            solution.append(path.direction)
+            solution.append(path.state)
         solution = solution[:-1]
         solution.reverse()
-        return solution
+                for i in solution:
+            print(i)
          
